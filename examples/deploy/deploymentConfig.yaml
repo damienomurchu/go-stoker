@@ -16,7 +16,7 @@ spec:
       restartPolicy: Always
       containers:
         - name: traffic-generator
-          image: quay.io/jary/go-stoker:latest
+          image: quay.io/jhellar/go-stoker:latest
           volumeMounts:
             - name: cluster-ca
               mountPath: /etc/cluster-ca
