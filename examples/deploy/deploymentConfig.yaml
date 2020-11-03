@@ -29,25 +29,27 @@ spec:
               readOnly: true
           env:
             - name: KAFKA_BOOTSTRAP_URL
-              value: 'tenant2-kafka-bootstrap-strimzi-tenant2.apps.mw-ocp4.cloud.lab.eng.bos.redhat.com:443'
+              value: 'my-cluster-kafka-bootstrap-kafka-cluster.apps-crc.testing:9094'
             - name: PRODUCER_TRAFFIC_TOPIC
               value: 'traffic-gen-topic'
             - name: PRODUCER_TRAFFIC_SEND_RATE_IN_SEC
               value: '5'
             - name: PRODUCER_CLIENT_ID
               value: 'traffic-gen-client'
+            - name: TLS_ENABLED
+              value: 'false'
       volumes:
         - name: cluster-ca
           secret:
-            secretName: tenant2-cluster-ca-cert
+            secretName: my-cluster-cluster-ca-cert
             defaultMode: 288
         - name: client-ca-cert
           secret:
-            secretName: tenant2-clients-ca-cert
+            secretName: my-cluster-clients-ca-cert
             defaultMode: 288
         - name: client-ca
           secret:
-            secretName: tenant2-clients-ca
+            secretName: my-cluster-clients-ca
             defaultMode: 288
           imagePullPolicy: IfNotPresent
       dnsPolicy: ClusterFirst
