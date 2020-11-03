@@ -29,7 +29,7 @@ spec:
               readOnly: true
           env:
             - name: KAFKA_BOOTSTRAP_URL
-              value: 'my-cluster-kafka-bootstrap-kafka-cluster.apps-crc.testing:9094'
+              value: 'my-cluster-kafka-bootstrap-kafka-cluster.apps.damurphy.f7b1.s1.devshift.org:9094'
             - name: PRODUCER_TRAFFIC_TOPIC
               value: 'traffic-gen-topic'
             - name: PRODUCER_TRAFFIC_SEND_RATE_IN_SEC
